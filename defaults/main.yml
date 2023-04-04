@@ -509,7 +509,7 @@ rhel7cis_sshd:
 rhel7cis_pam_faillock:
   attempts: 5
   interval: 900
-  unlock_time: 900
+  unlock_time: 1800
   fail_for_root: "no"
   remember: 5
   pwhash: sha512
@@ -522,9 +522,9 @@ rhel7cis_inactive_whitelist:
   - vagrant
 
 rhel7cis_pass:
-  max_days: 90
-  min_days: 7
-  warn_age: 7
+  max_days: 60
+  min_days: 1
+  warn_age: 30
 # Syslog system - either rsyslog or syslog-ng
 rhel7cis_syslog: rsyslog
 rhel7cis_rsyslog_ansiblemanaged: true
