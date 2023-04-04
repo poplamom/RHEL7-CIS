@@ -289,22 +289,22 @@
     - patch
     - rule_6.2.11
 
-- name: "6.2.12 | PATCH | Ensure users own their home directories"
-  file:
-    path: "{{ item.dir }}"
-    owner: "{{ item.id }}"
-    state: directory
-  with_items: "{{ rhel7cis_passwd | selectattr('uid', '>=', 1000) | selectattr('uid', '!=', 65534) | selectattr('dir', '!=', '/') | list }}"
-  loop_control:
-    label: "{{ rhel7cis_passwd_label }}"
-  when:
-    - rhel7cis_rule_6_2_12
-  tags:
-    - skip_ansible_lint
-    - level1-server
-    - level1-workstation
-    - patch
-    - rule_6.2.12
+# - name: "6.2.12 | PATCH | Ensure users own their home directories"
+#   file:
+#     path: "{{ item.dir }}"
+#     owner: "{{ item.id }}"
+#     state: directory
+#   with_items: "{{ rhel7cis_passwd | selectattr('uid', '>=', 1000) | selectattr('uid', '!=', 65534) | selectattr('dir', '!=', '/') | list }}"
+#   loop_control:
+#     label: "{{ rhel7cis_passwd_label }}"
+#   when:
+#     - rhel7cis_rule_6_2_12
+#   tags:
+#     - skip_ansible_lint
+#     - level1-server
+#     - level1-workstation
+#     - patch
+#     - rule_6.2.12
 
 - name: "6.2.13 | PATCH | Ensure users' home directories permissions are 750 or more restrictive"
   block:
