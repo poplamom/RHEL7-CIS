@@ -383,7 +383,7 @@ rhel7cis_bootloader_password_hash: "grub.pbkdf2.sha512.changethispart"
 rhel7cis_is_router: false
 
 # IPv6 required
-rhel7cis_ipv6_required: true
+rhel7cis_ipv6_required: false
 
 # AIDE
 rhel7cis_config_aide: true
